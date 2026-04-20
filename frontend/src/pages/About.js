@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './About.css';
 
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API = process.env.REACT_APP_API_URL;
 
 const ALGO_STEPS = [
   { n: '01', t: 'Input Data',        d: 'Pengguna memasukkan usia, suhu tubuh, durasi demam, durasi kejang, dan 11 gejala biner klinis.' },

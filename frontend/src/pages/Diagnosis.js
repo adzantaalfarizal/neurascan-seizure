@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Diagnosis.css';
 
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API = process.env.REACT_APP_API_URL;
 
 /* ─── Field definitions ──────────────────────────────────────────────────── */
 const NUMERIC_FIELDS = [
