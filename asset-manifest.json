@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/neurascan-seizure/static/css/main.49afcdd0.css",
-    "main.js": "/neurascan-seizure/static/js/main.ab61a8c6.js",
+    "main.js": "/neurascan-seizure/static/js/main.42e65045.js",
     "index.html": "/neurascan-seizure/index.html",
     "main.49afcdd0.css.map": "/neurascan-seizure/static/css/main.49afcdd0.css.map",
-    "main.ab61a8c6.js.map": "/neurascan-seizure/static/js/main.ab61a8c6.js.map"
+    "main.42e65045.js.map": "/neurascan-seizure/static/js/main.42e65045.js.map"
   },
   "entrypoints": [
     "static/css/main.49afcdd0.css",
-    "static/js/main.ab61a8c6.js"
+    "static/js/main.42e65045.js"
   ]
 }
