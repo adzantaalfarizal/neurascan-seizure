@@ -1,0 +1,34 @@
+.hdr {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px;
+  background: rgba(6,13,26,.6);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid transparent;
+  transition: var(--ease);
+}
+.hdr.scrolled { background: rgba(6,13,26,.95); border-bottom-color: var(--border); box-shadow: 0 4px 24px rgba(0,0,0,.4); }
+.hdr-inner { max-width: 1160px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+
+.logo { display: flex; align-items: center; gap: 10px; background: none; font-size: 1.2rem; font-weight: 800; color: var(--t1); letter-spacing: -.02em; transition: var(--ease); }
+.logo:hover { opacity: .8; }
+.logo-hi { color: var(--cyan); }
+
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav-link { background: none; color: var(--t2); font-size: .875rem; font-weight: 500; padding: 8px 15px; border-radius: 8px; transition: var(--ease); }
+.nav-link:hover { color: var(--t1); background: rgba(94,161,255,.07); }
+.nav-link.active { color: var(--blue); background: rgba(94,161,255,.12); }
+.nav-cta { margin-left: 8px; background: var(--blue); color: #020b18; font-size: .85rem; font-weight: 700; padding: 9px 20px; border-radius: 8px; transition: var(--ease); }
+.nav-cta:hover { background: var(--cyan); }
+
+.burger { display: none; flex-direction: column; gap: 5px; background: none; padding: 4px; }
+.burger span { display: block; width: 22px; height: 2px; background: var(--t2); border-radius: 2px; transition: var(--ease); }
+.burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 768px) {
+  .burger { display: flex; }
+  .nav { position: fixed; top: 68px; left: 0; right: 0; flex-direction: column; background: var(--bg-panel); border-bottom: 1px solid var(--border); padding: 16px; gap: 6px; transform: translateY(-110%); transition: transform .3s ease; pointer-events: none; }
+  .nav.open { transform: translateY(0); pointer-events: all; }
+  .nav-link, .nav-cta { width: 100%; text-align: center; }
+}

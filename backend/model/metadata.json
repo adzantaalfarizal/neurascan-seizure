@@ -1,0 +1,123 @@
+{
+  "features": [
+    "age_months",
+    "temperature",
+    "fever_before",
+    "fever_duration_h",
+    "duration_minutes",
+    "focal_movement",
+    "recurrence_same_day",
+    "postictal_drowsy",
+    "eye_deviation",
+    "loss_of_consciousness",
+    "cyanosis",
+    "family_history",
+    "prior_seizure",
+    "developmental_delay",
+    "sudden_onset"
+  ],
+  "numeric_features": [
+    "age_months",
+    "temperature",
+    "fever_duration_h",
+    "duration_minutes"
+  ],
+  "binary_features": [
+    "fever_before",
+    "focal_movement",
+    "recurrence_same_day",
+    "postictal_drowsy",
+    "eye_deviation",
+    "loss_of_consciousness",
+    "cyanosis",
+    "family_history",
+    "prior_seizure",
+    "developmental_delay",
+    "sudden_onset"
+  ],
+  "label_names": {
+    "0": "Kejang Demam Sederhana",
+    "1": "Kejang Demam Kompleks",
+    "2": "Kejang Tanpa Demam"
+  },
+  "label_en": {
+    "0": "Simple Febrile Seizure",
+    "1": "Complex Febrile Seizure",
+    "2": "Afebrile Seizure"
+  },
+  "metrics": {
+    "accuracy": 0.9917,
+    "f1_score": 0.9916,
+    "precision": 0.9918,
+    "recall": 0.9917,
+    "cv_accuracy_mean": 0.9767,
+    "cv_accuracy_std": 0.0086
+  },
+  "confusion_matrix": [
+    [
+      100,
+      0,
+      0
+    ],
+    [
+      2,
+      68,
+      0
+    ],
+    [
+      0,
+      0,
+      70
+    ]
+  ],
+  "class_report": {
+    "Kejang Demam Sederhana": {
+      "precision": 0.9803921568627451,
+      "recall": 1.0,
+      "f1-score": 0.9900990099009901,
+      "support": 100.0
+    },
+    "Kejang Demam Kompleks": {
+      "precision": 1.0,
+      "recall": 0.9714285714285714,
+      "f1-score": 0.9855072463768116,
+      "support": 70.0
+    },
+    "Kejang Tanpa Demam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 70.0
+    },
+    "accuracy": 0.9916666666666667,
+    "macro avg": {
+      "precision": 0.9934640522875817,
+      "recall": 0.9904761904761905,
+      "f1-score": 0.9918687520926005,
+      "support": 240.0
+    },
+    "weighted avg": {
+      "precision": 0.991830065359477,
+      "recall": 0.9916666666666667,
+      "f1-score": 0.9916475343186494,
+      "support": 240.0
+    }
+  },
+  "feature_importances": {
+    "duration_minutes": 0.221016,
+    "fever_duration_h": 0.214466,
+    "temperature": 0.202047,
+    "fever_before": 0.15451,
+    "focal_movement": 0.046902,
+    "age_months": 0.040252,
+    "recurrence_same_day": 0.035378,
+    "postictal_drowsy": 0.019854,
+    "sudden_onset": 0.017669,
+    "eye_deviation": 0.012793,
+    "developmental_delay": 0.010504,
+    "cyanosis": 0.009595,
+    "prior_seizure": 0.007107,
+    "loss_of_consciousness": 0.004437,
+    "family_history": 0.00347
+  }
+}

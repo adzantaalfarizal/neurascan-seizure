@@ -1,0 +1,108 @@
+.result-page { min-height: 100vh; padding: 40px 0 80px; }
+.result-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.result-empty {
+  min-height: 60vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 20px;
+  color: var(--t2); text-align: center;
+}
+
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: 1px solid var(--border); color: var(--t2);
+  font-size: .85rem; font-weight: 500; padding: 9px 18px;
+  border-radius: var(--radius); margin-bottom: 22px; transition: var(--ease);
+}
+.back-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Hero */
+.result-hero {
+  background: var(--rbg); border: 1px solid var(--rbd);
+  border-radius: var(--radius-xl); padding: 32px 36px;
+  margin-bottom: 22px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+  animation: fadeUp .55s ease both;
+}
+.result-hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--rc);
+}
+.rh-left  { display: flex; align-items: center; gap: 20px; flex: 1; min-width: 0; }
+.rh-icon-wrap { position: relative; width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rh-pulse { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--rbd); animation: ripple 2.2s ease infinite; }
+@keyframes ripple { 0%{ transform:scale(.85); opacity:.9; } 100%{ transform:scale(1.35); opacity:0; } }
+.rh-icon { font-size: 2.2rem; position: relative; z-index: 1; }
+.rh-meta  { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--t3); margin-bottom: 5px; }
+.rh-label { font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 800; color: var(--t1); letter-spacing: -.025em; margin-bottom: 4px; }
+.rh-en    { font-size: .85rem; color: var(--t2); font-style: italic; }
+
+/* Confidence circle */
+.conf-circle { position: relative; width: 120px; height: 120px; flex-shrink: 0; }
+.conf-inner  { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.conf-pct  { font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--t1); line-height: 1; }
+.conf-word { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-top: 3px; }
+
+/* Columns */
+.result-cols { display: grid; grid-template-columns: 1fr 360px; gap: 20px; margin-bottom: 20px; }
+.result-left, .result-right { display: flex; flex-direction: column; gap: 20px; }
+
+/* Cards */
+.rcard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; animation: fadeUp .5s ease both; }
+.rcard-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.rcard-icon  { font-size: 1.2rem; }
+.rcard-title { font-size: .9rem; font-weight: 700; color: var(--t1); }
+.rcard-sub   { font-size: .72rem; color: var(--t3); margin-top: 2px; }
+
+/* Diagnosis */
+.dx-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 3px; letter-spacing: -.015em; }
+.dx-en   { font-size: .8rem; color: var(--t3); font-style: italic; margin-bottom: 14px; }
+.dx-desc { font-size: .85rem; color: var(--t2); line-height: 1.68; margin-bottom: 20px; }
+
+/* Recommendations */
+.rec-box { background: rgba(74,222,128,.06); border: 1px solid rgba(74,222,128,.18); border-radius: var(--radius); padding: 18px; }
+.rec-title { display: flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--green); margin-bottom: 14px; }
+.rec-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.rec-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .83rem; color: var(--t2); line-height: 1.55; }
+.rec-num { background: rgba(74,222,128,.18); color: var(--green); font-size: .68rem; font-weight: 800; min-width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+/* Probability */
+.prob-list { display: flex; flex-direction: column; gap: 14px; }
+.prob-item { padding: 10px; border-radius: var(--radius); border: 1px solid transparent; transition: var(--ease); }
+.prob-item.winner { background: rgba(255,255,255,.03); border-color: var(--border); }
+.prob-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.prob-icon  { font-size: .9rem; }
+.prob-label { flex: 1; font-size: .82rem; font-weight: 600; color: var(--t1); }
+.prob-pct   { font-family: var(--mono); font-size: .85rem; font-weight: 700; }
+
+.bar-bg   { height: 5px; background: rgba(255,255,255,.06); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0; border-radius: 3px; transition: width 1s cubic-bezier(.4,0,.2,1); }
+
+/* Metrics */
+.metrics-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 12px; }
+.metric-box { background: var(--bg-panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 13px; text-align: center; }
+.metric-val { font-family: var(--mono); font-size: 1.45rem; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+.metric-lbl { font-size: .68rem; color: var(--t3); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.cv-row { font-size: .78rem; color: var(--t2); text-align: center; padding-top: 8px; border-top: 1px solid var(--border); }
+.cv-row strong { color: var(--blue); }
+
+/* Summary */
+.summary-note { font-size: .82rem; color: var(--t2); line-height: 1.55; margin-bottom: 14px; }
+.btn-ghost.full { width: 100%; justify-content: center; }
+
+/* Disclaimer */
+.result-disclaimer {
+  background: rgba(251,191,36,.06); border: 1px solid rgba(251,191,36,.18);
+  border-radius: var(--radius); padding: 15px 18px;
+  font-size: .8rem; color: var(--t2); line-height: 1.6; margin-bottom: 20px;
+}
+.result-disclaimer strong { color: var(--amber); }
+
+/* Actions */
+.result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+@media (max-width: 860px) { .result-cols { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .result-hero { flex-direction: column; align-items: flex-start; }
+  .conf-circle { align-self: center; }
+}
